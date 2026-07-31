@@ -45,13 +45,13 @@ router.get(
   //   next();
   // },
 
-  auth(Role.Admin, Role.Author, Role.User),
+  auth(Role.ADMIN, Role.AUTHOR, Role.USER),
   userController.getMyProfile,
 );
 
 router.put(
   "/my-profile",
-  auth(Role.Admin, Role.Author, Role.User),
+  auth(Role.ADMIN, Role.AUTHOR, Role.USER),
   userController.updateMyProfile,
 );
 

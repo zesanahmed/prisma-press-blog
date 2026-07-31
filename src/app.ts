@@ -5,6 +5,8 @@ import config from "./config";
 import { prisma } from "./lib/prisma";
 import { userRoutes } from "./modules/user/user.route";
 import { authRoutes } from "./modules/auth/auth.routes";
+import { postRoutes } from "./modules/post/post.routes";
+import { commentRoutes } from "./modules/comment/comment.routes";
 
 const app: Application = express();
 
@@ -24,6 +26,8 @@ app.get("/", async (req: Request, res: Response) => {
 
 app.use("/api/user", userRoutes);
 app.use("/api/auth", authRoutes);
+app.use("/api/post", postRoutes);
+app.use("/api/comment", commentRoutes);
 console.timeEnd("createProfile");
 
 export default app;
